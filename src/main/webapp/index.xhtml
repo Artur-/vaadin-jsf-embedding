@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:p="http://primefaces.org/ui"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+  <h:head>
+    <title>JSF Vaadin</title>
+    <link rel="stylesheet" href="#{request.contextPath}/css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans:700|PT+Serif"
+      rel="stylesheet"
+    />
+  </h:head>
+
+  <h:body>
+    <ui:include src="menu.xhtml" />
+
+    <p:dataList
+      value="#{blogPostListing.blogPosts}"
+      var="blogpost"
+      type="definition"
+    >
+      <article>
+        <h1>#{blogpost.title}</h1>
+        <small
+          >Published <time>#{blogpost.publishTime}</time> by
+          #{blogpost.author}</small
+        >
+        <section class="content">
+          <h:outputText value="#{blogpost.content}" escape="false" />
+        </section>
+      </article>
+    </p:dataList>
+  </h:body>
+</html>

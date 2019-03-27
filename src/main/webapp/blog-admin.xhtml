@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:p="http://primefaces.org/ui"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+  <h:head>
+    <title>JSF Vaadin</title>
+    <link rel="stylesheet" href="#{request.contextPath}/css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans:700|PT+Serif"
+      rel="stylesheet"
+    />
+    <script
+      src="frontend/bower_components/webcomponentsjs/webcomponents-loader.js"
+    ></script>
+    <link rel="import" href="vaadin/web-component/blog-admin.html" />
+    <style>
+      blog-admin { width: 100%; }
+    </style>
+  </h:head>
+
+  <h:body>
+    <ui:include src="menu.xhtml" />
+    <blog-admin></blog-admin>
+  </h:body>
+</html>
