@@ -1,5 +1,7 @@
 package org.vaadin.artur.jsfvaadin.vaadin;
 
+import java.time.LocalDateTime;
+
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.WebComponentExporter;
 import com.vaadin.flow.component.button.Button;
@@ -39,12 +41,14 @@ public class BlogAdmin extends VerticalLayout {
             grid.select(null);
             edit(e.getItem());
         });
-        add(grid);
+        add(newBlogPost, grid);
 
         editDialog = new EditDialog();
         editDialog.addSaveListener(e -> {
             BlogPost blogPost = e.getBlogPost();
             if (blogPost.getId() == null) {
+                blogPost.setAuthor("Random Internet Dude");
+                blogPost.setPublishTime(LocalDateTime.now());        
                 BlogPostService.addPost(blogPost);
                 grid.getDataProvider().refreshAll();
             } else {

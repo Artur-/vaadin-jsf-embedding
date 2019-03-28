@@ -14,20 +14,20 @@ public class BlogPostService {
     static {
         BlogPost p = new BlogPost();
         p.setId(1L);
-        p.setAuthor("User");
-        p.setTitle("Blog post 1");
-        p.setContent("<p>Content of blog post 1</p>");
-        p.setContentQuill("[{\"insert\":\"Content of blog post 1\\n\"}]");
-        p.setPublishTime(LocalDateTime.of(2018, 07, 31, 12, 25));
+        p.setAuthor("Blogger");
+        p.setTitle("JSF Blog post application launched");
+        p.setContent("<p>Today was a remarkable day when the JSF+Vaadin hybrid blog application was launched. People around the world gathered and celebrated the event.</p><p><img src=\"images/joy1.jpg\"><img src=\"images/joy2.jpg\"><img src=\"images/joy3.jpg\"></p>");
+        p.setContentQuill("[{\"insert\":\"Today was a remarkable day when the JSF+Vaadin hybrid blog application was launched. People around the world gathered and celebrated the event.\\n\"},{\"insert\":{\"image\":\"images/joy1.jpg\"}},{\"insert\":{\"image\":\"images/joy2.jpg\"}},{\"insert\":{\"image\":\"images/joy3.jpg\"}},{\"insert\":\"\\n\"}]");
+        p.setPublishTime(LocalDateTime.of(2019, 03, 27, 12, 25));
         blogPosts.add(p);
 
         p = new BlogPost();
         p.setId(2L);
-        p.setAuthor("Admin");
-        p.setTitle("Admin created blog posts");
-        p.setContent("<p><strong>Admin is god</strong></p><p><u>Content here</u></p>");
-        p.setContentQuill("[{\"attributes\":{\"bold\":true},\"insert\":\"Admin is god\"},{\"insert\":\"\\n\"},{\"attributes\":{\"underline\":true},\"insert\":\"Content here\"},{\"insert\":\"\\n\"}]");
-        p.setPublishTime(LocalDateTime.of(2019, 01, 12, 10, 00));
+        p.setAuthor("Blogger");
+        p.setTitle("Popularity soared");
+        p.setContent("<p>The application is getting visits from some high profile persons, like Nutella himself.</p><p><br></p><p><img src=\"images/nutella.jpg\"></p>");
+        p.setContentQuill("[{\"insert\":\"The application is getting visits from some high profile persons, like Nutella himself.\\n\\n\"},{\"insert\":{\"image\":\"images/nutella.jpg\"}},{\"insert\":\"\\n\"}]");
+        p.setPublishTime(LocalDateTime.of(2019, 03, 28, 10, 00));
         blogPosts.add(p);
     }
 
