@@ -20,21 +20,20 @@
     <dependencies>
       <dependency>
         <groupId>com.vaadin</groupId>
-        <artifactId>flow-bom</artifactId>
-        <version>1.5-SNAPSHOT</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.vaadin</groupId>
         <artifactId>vaadin-bom</artifactId>
-        <version>13.0.2</version>
+        <version>14.0.0.alpha1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
-
+  <repositories>
+    <repository>
+      <id>vaadin-prereleases</id>
+      <name>Vaadin Pre-releases</name>
+      <url>https://maven.vaadin.com/vaadin-prereleases</url>
+    </repository>
+  </repositories>
   <dependencies>
     <dependency>
       <groupId>com.sun.faces</groupId>
