@@ -24,5 +24,12 @@ header h4 {
 }
 .content {
   padding: 2em 0;
-  border-bottom: 1px solid rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.content pre {
+  background-color: hsla(213, 57%, 24%, 0.1);
+  border-radius: var(--lumo-border-radius-m);
+  margin-bottom: 0.3125em;
+  margin-top: 0.3125em;
+  padding: 0.3125em 0.625em;
 }
