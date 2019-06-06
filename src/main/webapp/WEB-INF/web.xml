@@ -44,11 +44,6 @@
 
    <servlet-mapping>
       <servlet-name>Vaadin Servlet</servlet-name>
-      <url-pattern>/frontend/*</url-pattern>
-   </servlet-mapping>
-
-   <servlet-mapping>
-      <servlet-name>Vaadin Servlet</servlet-name>
       <url-pattern>/vaadin/*</url-pattern>
    </servlet-mapping>
 </web-app>

@@ -11,6 +11,7 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.ItemClickEvent;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
+import com.vaadin.flow.component.webcomponent.WebComponent;
 import com.vaadin.flow.component.webcomponent.WebComponentDefinition;
 
 import org.vaadin.artur.jsfvaadin.backend.BlogPostService;
@@ -18,12 +19,15 @@ import org.vaadin.artur.jsfvaadin.data.BlogPost;
 
 public class BlogAdmin extends VerticalLayout {
 
-    @Tag("blog-admin")
-    public static class Exporter implements WebComponentExporter<BlogAdmin> {
+    public static class Exporter extends WebComponentExporter<BlogAdmin> {
+
+        public Exporter() {
+            super("blog-admin");
+        }
 
         @Override
-        public void define(WebComponentDefinition definition) {
-            // This is intentionally left blank as the view has no properties
+        public void configureInstance(WebComponent<BlogAdmin> webComponent, BlogAdmin component) {
+            // No further configuration needed in this case
         }
     }
 
@@ -48,7 +52,7 @@ public class BlogAdmin extends VerticalLayout {
             BlogPost blogPost = e.getBlogPost();
             if (blogPost.getId() == null) {
                 blogPost.setAuthor("Random Internet Dude");
-                blogPost.setPublishTime(LocalDateTime.now());        
+                blogPost.setPublishTime(LocalDateTime.now());
                 BlogPostService.addPost(blogPost);
                 grid.getDataProvider().refreshAll();
             } else {
