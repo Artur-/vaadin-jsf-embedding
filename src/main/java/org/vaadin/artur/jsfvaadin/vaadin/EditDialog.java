@@ -1,19 +1,14 @@
 package org.vaadin.artur.jsfvaadin.vaadin;
 
-import java.util.EventListener;
-
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
-import com.vaadin.flow.component.HasValue;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.confirmdialog.ConfirmDialog;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.richtexteditor.RichTextEditor;
-import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.binder.ValidationException;
@@ -23,7 +18,7 @@ import org.vaadin.artur.jsfvaadin.data.BlogPost;
 public class EditDialog extends Dialog {
 
     private TextField title;
-    private RichTextEditor contentQuill;
+    private RichTextEditor content;
     private Binder<BlogPost> binder;
     private BlogPost blogPost;
     private Button cancel;
@@ -32,18 +27,17 @@ public class EditDialog extends Dialog {
     public EditDialog() {
         title = new TextField("Title");
         title.setWidth("20em");
-        contentQuill = new RichTextEditor();
+        content = new RichTextEditor();
         binder = new Binder<BlogPost>(BlogPost.class);
 
         binder.bindInstanceFields(this);
-        binder.forField(contentQuill).bind("contentQuill");
+        binder.forField(content.asHtml()).bind("content");
 
         cancel = new Button("Cancel");
         save = new Button("Save");
         save.addClickListener(e -> {
             try {
                 binder.writeBean(this.blogPost);
-                this.blogPost.setContent(this.contentQuill.getHtmlValue());
                 fireEvent(new SaveEvent(this, this.blogPost));
                 close();
             } catch (ValidationException e1) {
@@ -57,7 +51,7 @@ public class EditDialog extends Dialog {
         HorizontalLayout buttons = new HorizontalLayout(cancel, save);
         buttons.setJustifyContentMode(JustifyContentMode.BETWEEN);
         buttons.setSpacing(false);
-        add(title, new Div(new Text("Content")), contentQuill,buttons);
+        add(title, new Div(new Text("Content")), content, buttons);
     }
 
     public void open(BlogPost blogPost) {

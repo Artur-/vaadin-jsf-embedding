@@ -2,17 +2,11 @@ package org.vaadin.artur.jsfvaadin.vaadin;
 
 import java.time.LocalDateTime;
 
-import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.WebComponentExporter;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.checkbox.Checkbox;
-import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.grid.Grid;
-import com.vaadin.flow.component.grid.ItemClickEvent;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.webcomponent.WebComponent;
-import com.vaadin.flow.component.webcomponent.WebComponentDefinition;
 
 import org.vaadin.artur.jsfvaadin.backend.BlogPostService;
 import org.vaadin.artur.jsfvaadin.data.BlogPost;

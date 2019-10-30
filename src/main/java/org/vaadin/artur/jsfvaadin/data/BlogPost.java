@@ -3,8 +3,6 @@ package org.vaadin.artur.jsfvaadin.data;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-import com.vaadin.flow.component.richtexteditor.RichTextEditor;
-
 public class BlogPost implements Serializable {
 
     private Long id;
@@ -12,8 +10,6 @@ public class BlogPost implements Serializable {
     private String title;
 
     private String content;
-
-    private String contentQuill;
 
     private LocalDateTime publishTime;
 
@@ -41,15 +37,6 @@ public class BlogPost implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public void setContentQuill(String contentQuill) {
-        this.contentQuill = contentQuill;
-
-    }
-
-    public String getContentQuill() {
-        return this.contentQuill;
     }
 
     public LocalDateTime getPublishTime() {
