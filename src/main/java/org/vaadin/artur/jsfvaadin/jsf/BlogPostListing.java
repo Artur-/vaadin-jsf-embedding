@@ -1,14 +1,13 @@
 package org.vaadin.artur.jsfvaadin.jsf;
 
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 import java.util.List;
-
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 
 import org.vaadin.artur.jsfvaadin.backend.BlogPostService;
 import org.vaadin.artur.jsfvaadin.data.BlogPost;
 
-@ManagedBean
+@Named
 @RequestScoped
 public class BlogPostListing {
 
