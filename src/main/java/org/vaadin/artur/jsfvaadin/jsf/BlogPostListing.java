@@ -1,9 +1,9 @@
 package org.vaadin.artur.jsfvaadin.jsf;
 
-import java.util.List;
+import jakarta.annotation.ManagedBean;
+import jakarta.enterprise.context.RequestScoped;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import java.util.List;
 
 import org.vaadin.artur.jsfvaadin.backend.BlogPostService;
 import org.vaadin.artur.jsfvaadin.data.BlogPost;
