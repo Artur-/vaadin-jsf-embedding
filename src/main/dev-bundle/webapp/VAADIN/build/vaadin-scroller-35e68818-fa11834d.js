@@ -1,0 +1,1 @@
+import{U as r}from"./indexhtml-761a925b.js";import"./ConnectionIndicator-81121820.js";const a={tagName:"vaadin-scroller",displayName:"Scroller",elements:[{selector:"vaadin-scroller",displayName:"Scroller",properties:[r.backgroundColor,r.borderColor,r.borderWidth,r.borderRadius,r.padding]}]};export{a as default};

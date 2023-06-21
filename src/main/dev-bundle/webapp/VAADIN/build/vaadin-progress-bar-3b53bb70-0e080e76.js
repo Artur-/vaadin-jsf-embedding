@@ -1,0 +1,1 @@
+import{U as r}from"./indexhtml-761a925b.js";import"./ConnectionIndicator-81121820.js";const o={tagName:"vaadin-progress-bar",displayName:"ProgressBar",elements:[{selector:"vaadin-progress-bar::part(bar)",displayName:"Bar",properties:[r.backgroundColor]},{selector:"vaadin-progress-bar::part(value)",displayName:"Value",properties:[r.backgroundColor]}]};export{o as default};
