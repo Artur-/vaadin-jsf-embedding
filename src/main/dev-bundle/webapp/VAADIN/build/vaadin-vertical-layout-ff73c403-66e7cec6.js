@@ -1,0 +1,1 @@
+import{U as a}from"./indexhtml-761a925b.js";import"./ConnectionIndicator-81121820.js";const e={tagName:"vaadin-vertical-layout",displayName:"VerticalLayout",elements:[{selector:"vaadin-vertical-layout",displayName:"Layout",properties:[a.backgroundColor,a.borderColor,a.borderWidth,a.borderRadius,a.padding,a.gap]}]};export{e as default};
