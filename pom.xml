@@ -62,6 +62,15 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- For easy testing from cli: mvn wildfly:run -->
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>4.1.0.Final</version>
+                <configuration>
+                    <version>28.0.1.Final</version>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <profiles>
